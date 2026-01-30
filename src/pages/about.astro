@@ -1,25 +1,16 @@
 ---
 
-import { getEntry, render } from "astro:content";
-import Markdown from "@components/misc/Markdown.astro";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
-
-const aboutPost = await getEntry("spec", "about");
-
-if (!aboutPost) {
-	throw new Error("About page content not found");
-}
-
-const { Content } = await render(aboutPost);
 ---
 <MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)}>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full ">
-            <Markdown class="mt-2">
-                <Content />
-            </Markdown>
+            <h1>关于我</h1>
+            <p>你好，我是一名运维工程师。</p>
+            <p>除了日常工作外，我还喜欢研究 GitHub 项目，捣鼓云服务器、NAS 系统，以及深入了解 Linux 和 Windows 系统的各种特性。</p>
+            <p>这个博客是我记录学习过程、分享技术经验的地方，希望能与大家共同进步。</p>
         </div>
     </div>
 </MainGridLayout>
