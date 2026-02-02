@@ -1,5 +1,5 @@
 ---
-title: xray-xhttp
+title: 快速搭建节点教程
 published: 2026-02-02
 description: xhttp脚本的部署教程
 image: ''
